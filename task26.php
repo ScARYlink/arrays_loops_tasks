@@ -10,14 +10,19 @@ for ($i=1; $i<=7; $i++) {
     $likeArrays[] = rand(1, 100);
 }
 
-print_r($likeArrays);
-echo "<br>";
+for ($i = 0; $i <= 5; $i++) {
+    $arr[$i] = rand(1, 100);
+}
+//print_r($arr);
+foreach ($arr as $key => $ar) {
 
-foreach ($likeArrays as $key=>$item) {
-
-        if ($key % 2 == 0 && $item > 0) {
-            $result = $key * $item;
-            echo $result;
-        }
-    
+    if ($ar > 0 and $key % 2 == 0) {
+        //echo "{$key}(парные) и больше нуля={$ar}"."<br>";
+        $ar1[]=$ar;
+        echo array_product($ar1);
+        echo "<br>";
+    }
+    elseif ($ar > 0 and $key % 2 == 1) {
+        echo "{$key}(нe парные) и больше нуля={$ar}"."<br>";
+    }
 }
